@@ -57,3 +57,6 @@ gem 'spring',        group: :development
 
 # Use request log analyzer
 gem 'request-log-analyzer'
+
+# Use Tweetstream
+gem 'tweetstream'
