@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   get 'auth/failure', to: 'sessions#failure'
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'signin', to: 'sessions#new', as: 'signin'
+  namespace :api do
+    namespace :v1 do
+      resources :raw_tweets, only: [:index, :show]
+    end
+  end
 end

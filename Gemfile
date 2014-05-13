@@ -60,3 +60,6 @@ gem 'request-log-analyzer'
 
 # Use Tweetstream
 gem 'tweetstream'
+
+# User Active Model Serializers
+gem 'active_model_serializers'
