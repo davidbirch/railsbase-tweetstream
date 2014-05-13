@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       resources :raw_tweets, only: [:index, :show]
     end
   end
+  resources :keywords
+  resources :filters
+
 end

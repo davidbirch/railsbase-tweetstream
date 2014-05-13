@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510041005) do
+ActiveRecord::Schema.define(version: 20140513105857) do
+
+  create_table "filters", force: true do |t|
+    t.string   "filter_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "keywords", force: true do |t|
+    t.string   "keyword_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "raw_tweets", force: true do |t|
     t.text     "raw"
