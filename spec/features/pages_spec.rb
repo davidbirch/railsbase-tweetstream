@@ -15,6 +15,20 @@ describe "pages: " do
       page.status_code.should be(200)
     end
     
+    it "should link to the filters list" do
+      visit root_path
+      click_link "Filters"
+      page.should have_content("Listing filters")
+      page.status_code.should be(200)  
+    end
+    
+    it "should link to the keywords list" do
+      visit root_path
+      click_link "Keywords"
+      page.should have_content("Listing keywords")
+      page.status_code.should be(200)  
+    end
+    
     it "should link to the about page when authenticated" do
       visit root_path
       mock_auth_hash
