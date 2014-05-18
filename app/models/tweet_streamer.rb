@@ -6,12 +6,8 @@ class TweetStreamer
       log.info("Tweet streamer started")
       
       # temporary - set this as the companylist
-      keyword_list = ['@ESPNcricinfo', '@abcgrandstand']
-      keyword_list += ['@AFL', '@AFLPhotos', '@AFLrecord', '@AFLTribunal', '@AFLPlayers', '@AFLNewsWire', '@DrDreamTeam']
-      keyword_list += ['@AdelaideFC', '@BrisbaneLions', '@CollingwoodFC', '@CarltonFC', '@Essendon_FC', '@Fremantle_FC', '@CatsInside']
-
-      filter_list = [16542390, 17331252]
-      filter_list += [16319888, 21342797, 34446382, 561823721, 41718791, 115013849, 1253361798]
+      keyword_list =   Keyword.all.pluck(:keyword_value)
+      filter_list =  Filter.all.pluck(:filter_value)
       
       # access the tweet stream
       ts_yaml = YAML.load_file(File.expand_path("../../../config/tweetstream.yml", __FILE__))

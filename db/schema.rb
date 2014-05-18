@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140513105857) do
 
   create_table "filters", force: true do |t|
-    t.string   "filter_value"
+    t.integer  "filter_value", limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

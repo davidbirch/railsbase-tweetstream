@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require "csv"
+
+# import the seed data for keywords
+CSV.open("db/data/keywords.csv", "r").each do |row|
+  Keyword.find_or_create_by(keyword_value: row[0])
+end
+
+# import the seed data for keywords
+CSV.open("db/data/filters.csv", "r").each do |row|
+  Filter.find_or_create_by(filter_value: row[0])
+end

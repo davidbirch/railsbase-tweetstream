@@ -1,7 +1,7 @@
 class CreateFilters < ActiveRecord::Migration
   def change
     create_table :filters do |t|
-      t.string :filter_value
+      t.column :filter_value, :bigint # manually changed from int to bigint
 
       t.timestamps
     end
