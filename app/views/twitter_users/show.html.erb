@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @twitter_user.name %>
+</p>
+
+<p>
+  <strong>Screen name:</strong>
+  <%= @twitter_user.screen_name %>
+</p>
+
+<p>
+  <strong>User guid:</strong>
+  <%= @twitter_user.user_guid %>
+</p>
+
+<p>
+  <strong>Profile background image url:</strong>
+  <%= @twitter_user.profile_background_image_url %>
+</p>
+
+<%= link_to 'Edit', edit_twitter_user_path(@twitter_user) %> |
+<%= link_to 'Back', twitter_users_path %>

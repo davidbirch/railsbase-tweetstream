@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513105857) do
+ActiveRecord::Schema.define(version: 20140522104440) do
 
   create_table "filters", force: true do |t|
     t.integer  "filter_value", limit: 8
@@ -28,6 +28,25 @@ ActiveRecord::Schema.define(version: 20140513105857) do
   create_table "raw_tweets", force: true do |t|
     t.text     "raw"
     t.integer  "tweet_guid", limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tweets", force: true do |t|
+    t.string   "tweet_text"
+    t.datetime "tweet_created_at"
+    t.integer  "tweet_guid",       limit: 8
+    t.string   "tweet_source"
+    t.integer  "twitter_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitter_users", force: true do |t|
+    t.string   "name"
+    t.string   "screen_name"
+    t.integer  "user_guid",                    limit: 8
+    t.string   "profile_background_image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

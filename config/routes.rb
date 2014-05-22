@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
@@ -13,5 +14,7 @@ Rails.application.routes.draw do
   end
   resources :keywords
   resources :filters
+  resources :twitter_users
+  resources :tweets
 
 end
