@@ -48,9 +48,6 @@ describe "sessions: " do
       visit auth_failure_path
       page.status_code.should be(200)
     end
-  end
-  
-  
-  
+  end  
 
 end
