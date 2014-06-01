@@ -12,9 +12,13 @@ Rails.application.routes.draw do
       resources :raw_tweets, only: [:index, :show]
     end
   end
+  
   resources :keywords
   resources :filters
   resources :twitter_users
   resources :tweets
-
+  resources :groups
+  resources :teams
+  resources :categories
+  
 end

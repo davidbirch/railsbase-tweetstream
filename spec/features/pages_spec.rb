@@ -22,6 +22,27 @@ describe "pages: " do
       page.status_code.should be(200)  
     end
     
+    it "should link to the groups list" do
+      visit root_path
+      click_link "Groups"
+      page.should have_content("Listing groups")
+      page.status_code.should be(200)  
+    end
+    
+    it "should link to the teams list" do
+      visit root_path
+      click_link "Teams"
+      page.should have_content("Listing teams")
+      page.status_code.should be(200)  
+    end
+    
+    it "should link to the categories list" do
+      visit root_path
+      click_link "Categories"
+      page.should have_content("Listing categories")
+      page.status_code.should be(200)  
+    end
+    
     it "should link to the keywords list" do
       visit root_path
       click_link "Keywords"

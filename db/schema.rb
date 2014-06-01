@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522104440) do
+ActiveRecord::Schema.define(version: 20140531052716) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "subject_id"
+    t.string   "subject_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "filters", force: true do |t|
     t.integer  "filter_value", limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +42,12 @@ ActiveRecord::Schema.define(version: 20140522104440) do
   create_table "raw_tweets", force: true do |t|
     t.text     "raw"
     t.integer  "tweet_guid", limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

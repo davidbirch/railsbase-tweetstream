@@ -1,15 +1,13 @@
 class RawTweet < ActiveRecord::Base
   
-  after_save do |raw_tweet|
-    convert_to_tweet(raw_tweet)
-  end
+  after_create :convert_to_tweet
   
   private
 
-  def convert_to_tweet(raw_tweet)
+  def convert_to_tweet
     
     # decompose the raw_tweet
-    tweet_hash = JSON.parse(raw_tweet.raw) # note +was+ getting an error on one record that is not valid JSON ...
+    tweet_hash = JSON.parse(self.raw) # note +was+ getting an error on one record that is not valid JSON ...
     #logger.debug("Hash = #{tweet_hash}")
     
     tweet_guid = tweet_hash["id_str"]
