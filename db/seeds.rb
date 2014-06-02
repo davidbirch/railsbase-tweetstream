@@ -15,5 +15,15 @@ end
 
 # import the seed data for keywords
 CSV.open("db/data/filters.csv", "r").each do |row|
-  Filter.find_or_create_by(filter_value: row[0])
+  Filter.find_or_create_by(filter_value: row[0]) 
+end
+
+# import the seed data for groups
+CSV.open("db/data/groups.csv", "r").each do |row|
+  Group.find_or_create_by(name: row[0]) 
+end
+
+# import the seed data for teams
+CSV.open("db/data/teams.csv", "r").each do |row|
+  Team.find_or_create_by(name: row[0]) 
 end

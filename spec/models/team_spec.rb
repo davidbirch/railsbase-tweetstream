@@ -2,6 +2,14 @@ require 'spec_helper'
 
 describe Team do
   
+  it "should validate uniquess of name" do
+    should validate_uniqueness_of(:name)
+  end
+  
+  it "should validate presence of name" do
+    should validate_presence_of(:name)
+  end
+  
   context "with factories created" do
     
     before :each do
@@ -10,7 +18,7 @@ describe Team do
       @category = Category.find_by(subject_type: "Team", subject_id: @team.id)
     end
     
-    context "a normal raw_tweet" do  
+    context "a normal team" do  
       it " is valid" do
         @team.should be_valid
       end
@@ -23,8 +31,7 @@ describe Team do
         @category.subject_type.should == "Team"
       end
     end
-    
-   
+     
   end
   
 end
