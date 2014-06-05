@@ -18,3 +18,7 @@
 # ignore other key files
 *.txt
 *.conf
+*.log
+*.output
+*.pid
+
