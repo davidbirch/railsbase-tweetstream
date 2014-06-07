@@ -11,17 +11,18 @@
       <!-- Row of columns -->
       <%= bootstrap_flash %>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 trending">
           <h2>Trending Now</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>See what's trending on twitter.</p>
+          <%= render partial: "tags/top_ten_tags_by_count" %>
+          <p><%= link_to "View details >>", tags_path, class: "btn btn-default", role: "button" %></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 popular_players">
           <h2>Popular Players</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
-        <div class="col-md-4">
+        <div class="col-md-4 match_centre">
           <h2>The Match Centre</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
@@ -31,17 +32,17 @@
       <hr>
         
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 teams">
           <h2>Your Team</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 fantasy_league">
           <h2>Fantasty League</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
-        <div class="col-md-4">
+        <div class="col-md-4 about">
           <h2>About AFL Real-Time</h2>
           <p>The latest social media and news for the Australian Football League.</p>
           <p>Keep up to date with your team, what's trending, and follow matches live.</p>
