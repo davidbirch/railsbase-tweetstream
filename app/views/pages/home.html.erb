@@ -2,13 +2,14 @@
     <div class="jumbotron">
       <div class="container">
         <h1>AFL Real-Time</h1>
-        <p>Your source of the latest social media and news for the Australian Football League.  Keep up to date with your team, what's trending, and follow matches live.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+        <p>The latest social media and news for the Australian Football League.  Keep up to date with your team, what's trending, and follow matches live.</p>
+        <p><%= link_to "Learn more >>", about_path, class: "btn btn-primary btn-lg", role: "button" %></p>
       </div>
     </div>
 
     <div class="container">
       <!-- Row of columns -->
+      <%= bootstrap_flash %>
       <div class="row">
         <div class="col-md-4">
           <h2>Trending Now</h2>
@@ -42,8 +43,9 @@
        </div>
         <div class="col-md-4">
           <h2>About AFL Real-Time</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>The latest social media and news for the Australian Football League.</p>
+          <p>Keep up to date with your team, what's trending, and follow matches live.</p>
+          <p><%= link_to "View details >>", about_path, class: "btn btn-default", role: "button" %></p>
         </div>
       </div>
       
