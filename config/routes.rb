@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # static routes
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
-  get 'tag_summary/:name', to: 'tag_summary#show'
+  get 'search', to: 'searches#show'
+  get 'hashtag/:name', to: 'hashtags#show'
+  
 
   
   # auth routes

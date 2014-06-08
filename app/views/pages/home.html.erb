@@ -11,14 +11,14 @@
       <!-- Row of columns -->
       <%= bootstrap_flash %>
       <div class="row">
-        <div class="col-md-4 trending">
-          <h2>Trending Now</h2>
+        <div class="col-md-4 trends">
+          <h2>Trends</h2>
           <p>See what's trending on AFL Real-Time.</p>
           <%= render partial: "tags/top_ten_tags_by_count" %>
           <p><%= link_to "View details >>", tags_path, class: "btn btn-default", role: "button" %></p>
         </div>
         <div class="col-md-4 popular_players">
-          <h2>Popular Players</h2>
+          <h2>Who To Follow</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
