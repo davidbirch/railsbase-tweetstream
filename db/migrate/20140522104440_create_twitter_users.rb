@@ -5,6 +5,7 @@ class CreateTwitterUsers < ActiveRecord::Migration
       t.string :screen_name
       t.column :user_guid, :bigint # manually changed from int to bigint
       t.string :profile_background_image_url
+      t.integer :followers_count
 
       t.timestamps
     end

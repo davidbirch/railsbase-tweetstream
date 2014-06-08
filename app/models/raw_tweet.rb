@@ -18,6 +18,7 @@ class RawTweet < ActiveRecord::Base
     twitter_user_name = tweet_hash["user"]["name"]
     twitter_user_screen_name = tweet_hash["user"]["screen_name"]
     twitter_user_profile_image_url = tweet_hash["user"]["profile_image_url"]
+    twitter_user_followers_count = tweet_hash["user"]["followers_count"]
     
     # create the TwitterUser
     twitter_user = TwitterUser.find_or_create_by(user_guid: twitter_user_guid) do |u|
@@ -25,6 +26,7 @@ class RawTweet < ActiveRecord::Base
       u.screen_name = twitter_user_screen_name
       u.user_guid = twitter_user_guid
       u.profile_background_image_url = twitter_user_profile_image_url
+      u.followers_count = twitter_user_followers_count
       u.save
     end
     

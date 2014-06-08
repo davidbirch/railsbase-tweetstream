@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20140607054303) do
     t.string   "screen_name"
     t.integer  "user_guid",                    limit: 8
     t.string   "profile_background_image_url"
+    t.integer  "followers_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
