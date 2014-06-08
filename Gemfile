@@ -63,3 +63,6 @@ gem 'tweetstream'
 
 # User Active Model Serializers
 gem 'active_model_serializers'
+
+# Use friendly_id
+gem 'friendly_id'

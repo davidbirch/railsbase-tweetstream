@@ -1,6 +1,8 @@
 class CommonWord
   
   def self.list
+    # list if from
+    # http://www.englishclub.com/vocabulary/common-words-100.htm
     ["the",
     "be",
     "to",

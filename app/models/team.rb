@@ -1,7 +1,6 @@
 class Team < ActiveRecord::Base
   
-  validates :name, presence: true
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
   
   after_create :create_category
   
