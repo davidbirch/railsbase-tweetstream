@@ -1,3 +1,55 @@
+    <div class="container">
+
+      <%= bootstrap_flash %>
+      
+      <div class="row">
+        
+        <div class="col-md-9 main_content">
+          <h2>Listing Tags</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Tweet</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <% @tags.each do |tag| %>
+                <tr>
+                  <td><%= tag.name %></td>
+                  <td><%= tag.tweet_id %></td>
+                  <td><%= link_to 'Show', tag %></td>
+                  <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+                  <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-3 sidebar">
+          <div class="well sidebar-nav">
+            <h3>Navigation</h3>
+            <ul class="nav nav-list">
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "About", about_path %></li>
+            </ul>
+          </div>  
+        </div>
+        
+      </div>
+      
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2014</p>
+        <%= debug params %>
+      </footer>
+    </div> <!-- /container -->
+
+
+
 <h1>Listing tags</h1>
 
 <table>
