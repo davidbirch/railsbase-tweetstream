@@ -16,7 +16,7 @@ class Tag < ActiveRecord::Base
   
   scope :common_words, -> { where(common_word: true) }
   scope :uncommon_words, -> { where(common_word: false)}
-  
+  scope :exclude_short_words, -> {where("length(name) > 3")}
   private 
   
   def common_words_list
@@ -24,7 +24,10 @@ class Tag < ActiveRecord::Base
     # http://www.englishclub.com/vocabulary/common-words-100.htm
     ["is",
      "was",
-     "rt"]+
+     "rt",
+     "today",
+     "between",
+     "game"]+
     ["the",
     "be",
     "to",

@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
   private
   
     def top_ten_tags_by_count
-      Tag.uncommon_words.group(:name, :slug).order("count_id desc").limit(10).count(:id)
+      Tag.uncommon_words.exclude_short_words.group(:name, :slug).order("count_id desc").limit(10).count(:id)
     end
     
     def all_tags_by_count
-      Tag.uncommon_words.group(:name, :slug).order("count_id desc").count(:id)  
+      Tag.uncommon_words.exclude_short_words.group(:name, :slug).order("count_id desc").count(:id)  
     end
     
     def current_user
