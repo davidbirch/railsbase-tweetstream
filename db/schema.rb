@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140607054303) do
 
   create_table "tags", force: true do |t|
     t.string   "name",                        null: false
+    t.string   "slug"
     t.integer  "tweet_id"
     t.boolean  "common_word", default: false
     t.datetime "created_at"

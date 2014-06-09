@@ -1,7 +1,8 @@
 class SearchesController < ApplicationController
   
+  # GET /search?q=:q
   def show
-    @tags = Tag.find_by_name(params[:q])
+    @tags = Tag.where("slug = ?", params[:q])
   end
     
 end

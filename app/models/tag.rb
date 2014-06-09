@@ -1,6 +1,8 @@
 class Tag < ActiveRecord::Base
   
+  extend FriendlyId
   belongs_to :tweet
+  friendly_id :name, :use => :scoped, :scope => :tweet
   
   validates :name, presence: true
   validates :name, uniqueness: { scope: :tweet,
@@ -8,7 +10,7 @@ class Tag < ActiveRecord::Base
   validates_inclusion_of :common_word, in: [true, false]
   
   before_create do
-    self.common_word = common_words_list.include?(self.name)
+    self.common_word = common_words_list.include?(self.slug)
     true
   end
   
