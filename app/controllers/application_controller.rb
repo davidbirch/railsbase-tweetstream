@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :user_signed_in?, :correct_user?
   helper_method :top_ten_tags_by_count
+  helper_method :teams
   
   private
   
@@ -14,6 +15,19 @@ class ApplicationController < ActionController::Base
     def all_tags_by_count
       Tag.uncommon_words.exclude_short_words.group(:name, :slug).order("count_id desc").count(:id)  
     end
+    
+    def teams(teams = nil)
+      #log = Logger.new(File.expand_path("#{Rails.root}/log/application_helper.log", __FILE__))
+      #log.info("#{site_variables.inspect}")
+    
+      if teams.present?
+        teams
+      elsif @teams.present?
+        @teams
+      else
+        Team.all
+      end  
+    end 
     
     def current_user
       begin
